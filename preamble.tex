@@ -1,0 +1,137 @@
+%preamble
+\documentclass[12pt,a4paper,openany,oneside]{book}
+%-------------------------------------------------------------------------------
+%package
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage[AutoFakeBold=2.5]{xeCJK}
+\usepackage{indentfirst}
+%\setlength\parindent{2em}%中英文首行缩进2em，
+
+\usepackage{newtxtext}%times字体
+\usepackage[slantedGreek]{newtxmath}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}
+\fancyfoot[L,R]{}
+\fancyfoot[C]{\vspace*{-6mm}\fontsize{9}{9}\selectfont\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage{pict2e}
+\usepackage{color}
+\usepackage{graphicx,float}
+\usepackage[noadjust]{cite}
+\usepackage{lipsum,zhlipsum}%生成随机文本，可以去掉
+
+%加上你自己的package
+\usepackage{}
+
+
+%hyperref
+\usepackage[notref,notcite]{showkeys}%option=notref,notcite
+\usepackage[hidelinks]{hyperref}
+%\hypersetup{%修改设置
+%	colorlinks=true,%
+%	pdfborder= 0 0 0 ,%
+%	%pdfpagemode=FullScreen,%option=UseNone, UseThumbs(show thumbnails), UseOutlines (show book-marks), FullScreen, UseOC (PDF 1.5), and UseAttachments
+%	pdftitle={title},%
+%	pdfsubject={subject},%
+%	pdfauthor={author},%
+%	pdfkeywords={keyword},%
+%}
+\usepackage{cleveref}
+
+%other useful packages:
+%%meet the standard for bib: GB/T 7714-2015 
+%\usepackage[backend=biber,style=gb7714-2015]{biblatex} 
+%\addbibresource{bibfile}
+
+%-------------------------------------------------------------------------------
+%自定义
+%macro
+\def\dd{\mathrm{d}}
+\numberwithin{equation}{section}
+\newcommand\abs[1]{\left\lvert #1 \right\rvert}
+\newcommand\norm[1]{\left\lVert #1 \right\rVert}
+\let\div\rest
+\DeclareMathOperator{\div}{div}
+\def\dis{\displaystyle}
+
+%environment
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{corollary}[lemma]{Corollary}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+
+
+
+%-------------------------------------------------------------------------------
+%各种设置，慎改！
+%toc
+\renewcommand{\contentsname}{\vspace*{9.8mm}\fontsize{16}{16}\heiti\textbf{目}\hspace{5.8mm}\textbf{录}}
+%\usepackage{tocbibind}%把目录、参考文献加入目录%和当前文档中的几条命令重复
+\usepackage[titles]{tocloft}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+%If you want SimHei for number
+%\renewcommand{\cftchappagefont}{\heiti\setmainfont{SimHei}}
+\renewcommand{\cftchappagefont}{}
+\renewcommand{\cftdot}{…}
+\renewcommand{\cftdotsep}{0}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecindent}{\cftchapindent}
+\renewcommand{\cftsubsecindent}{\cftchapindent}
+\renewcommand{\cftchapfont}{\fontsize{16}{24}\selectfont\heiti}
+\renewcommand{\cftsecfont}{\fontsize{15}{22.5}\selectfont\heiti}
+\renewcommand{\cftsubsecfont}{\fontsize{14}{21}\selectfont\heiti}
+%规范中未对目录不同项之间的间距做规定，以下数值取半倍行高
+\renewcommand{\cftbeforechapskip}{8pt}
+\renewcommand{\cftbeforesecskip}{7.5pt}
+\renewcommand{\cftbeforesubsecskip}{7pt}
+
+%title
+\usepackage{titlesec}
+\titleformat{\chapter}{\vspace*{-19.8mm}\centering\fontsize{16}{16}\bfseries\heiti}{\thechapter}{1em}{\vspace*{-9.5mm}}
+\titleformat{\section}{\vspace*{-0.2mm}\fontsize{15}{15}\bfseries\heiti}{\thesection}{1em}{\vspace{1.1mm}}
+\titleformat{\subsection}{\vspace*{0.6mm}\fontsize{14}{14}\bfseries\heiti}{\thesubsection}{1em}{\vspace{2.6mm}}
+\renewcommand\bibname{\vspace*{9mm} 参考文献\vspace{-9mm}}
+
+%font
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+\setCJKfamilyfont{song}{SimSun}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{fs}{FangSong}
+\newcommand{\song}{\CJKfamily{song}}    % 宋体
+\def\songti{\song}
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
+\def\fangsong{\fs}
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体
+\def\kaishu{\kai}
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体
+\def\heiti{\hei}
+
+%封面页横线
+\makeatletter
+\newlength\ae@tmp@length
+\newcommand\aeunderline[2][]{%%
+	\settowidth\ae@tmp@length{#2}%%
+	\makebox[0pt][r]{#2}%%
+	\hspace{-\ae@tmp@length}%%
+	\rule[\dimexpr-0.25ex-4pt]{\dimexpr\ae@tmp@length+#1+0pt\relax}{1pt}}
+\makeatother
+
+\newcommand*{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
+\usepackage[absolute,overlay]{textpos}
