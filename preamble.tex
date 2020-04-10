@@ -6,8 +6,6 @@
 
 \usepackage[AutoFakeBold=2.5]{xeCJK}
 \usepackage{indentfirst}
-%\setlength\parindent{2em}%中英文首行缩进2em，
-
 \usepackage{newtxtext}%times字体
 \usepackage[slantedGreek]{newtxmath}
 
@@ -25,15 +23,23 @@
 \usepackage{pict2e}
 \usepackage{color}
 \usepackage{graphicx,float}
-\usepackage[noadjust]{cite}
 \usepackage{lipsum,zhlipsum}%生成随机文本，可以去掉
 
 %加上你自己的package
 \usepackage{}
 
 
+%参考文献
+%Use EITHER 1
+\usepackage[noadjust]{cite}
+%OR 2:
+%%meet the standard for bib: GB/T 7714-2015 
+%\usepackage[backend=biber,style=gb7714-2015]{biblatex} 
+%\addbibresource{bibfile}
+
+
 %hyperref
-\usepackage[notref,notcite]{showkeys}%option=notref,notcite
+%\usepackage[notref,notcite]{showkeys}%option=notref,notcite
 \usepackage[hidelinks]{hyperref}
 %\hypersetup{%修改设置
 %	colorlinks=true,%
@@ -45,34 +51,28 @@
 %	pdfkeywords={keyword},%
 %}
 \usepackage{cleveref}
-
-%other useful packages:
-%%meet the standard for bib: GB/T 7714-2015 
-%\usepackage[backend=biber,style=gb7714-2015]{biblatex} 
-%\addbibresource{bibfile}
-
 %-------------------------------------------------------------------------------
 %自定义
 %macro
-\def\dd{\mathrm{d}}
-\numberwithin{equation}{section}
-\newcommand\abs[1]{\left\lvert #1 \right\rvert}
-\newcommand\norm[1]{\left\lVert #1 \right\rVert}
-\let\div\rest
-\DeclareMathOperator{\div}{div}
-\def\dis{\displaystyle}
-
-%environment
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{theorem}[lemma]{Theorem}
-\newtheorem{corollary}[lemma]{Corollary}
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-
-
+%\def\dd{\mathrm{d}}
+%\numberwithin{equation}{section}
+%\newcommand\abs[1]{\left\lvert #1 \right\rvert}
+%\newcommand\norm[1]{\left\lVert #1 \right\rVert}
+%\let\div\rest
+%\DeclareMathOperator{\div}{div}
+%\def\dis{\displaystyle}
+%
+%%environment
+%\newtheorem{lemma}{Lemma}[chapter]
+%\newtheorem{theorem}[lemma]{Theorem}
+%\newtheorem{corollary}[lemma]{Corollary}
+%\theoremstyle{remark}
+%\newtheorem*{remark}{Remark}
+%\newtheorem*{solution}{Solution}
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}[chapter]
+%
+%
 
 %-------------------------------------------------------------------------------
 %各种设置，慎改！
