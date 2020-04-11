@@ -4,6 +4,8 @@
 
 项目地址: https://github.com/Hggg/BNU-Bachelor-Template
 
+当前版本: Ver3.3-Build20200411
+
 ##说明及注意事项
 1.	**注意**：
 	-	本模板基于北师大毕业论文规范[1]和图书馆word模板[2]制作，与图书馆模板大体上一致，***暂未***通过审核；
@@ -81,7 +83,7 @@
 
 
 ##	Build histroy
-### Apr 11, 2020
+### Ver3.3-Build20200411
 1.	修复了致谢页的页码为黑体的问题
 
 2.	关于preamble的修改
