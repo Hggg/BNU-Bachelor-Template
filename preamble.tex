@@ -28,7 +28,6 @@
 %加上你自己的package
 \usepackage{}
 
-
 %参考文献
 %Use EITHER 1
 \usepackage[noadjust]{cite}
@@ -76,8 +75,28 @@
 
 %-------------------------------------------------------------------------------
 %各种设置，慎改！
+%font
+\setCJKmainfont{SimSun}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+\setCJKfamilyfont{song}{SimSun}
+\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{kai}{KaiTi}
+\setCJKfamilyfont{fs}{FangSong}
+\newcommand{\song}{\CJKfamily{song}}    % 宋体
+\def\songti{\song}
+\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
+\def\fangsong{\fs}
+\newcommand{\kai}{\CJKfamily{kai}}      % 楷体
+\def\kaishu{\kai}
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体
+\def\heiti{\hei}
+
 %toc
 \renewcommand{\contentsname}{\vspace*{9.8mm}\fontsize{16}{16}\heiti\textbf{目}\hspace{5.8mm}\textbf{录}}
+%如果需要把“目录”二字改为英文，注释掉上一行，并取消注释下一行
+%\renewcommand{\contentsname}{\vspace*{9.8mm}\fontsize{16}{16}Contents}
+%
 %\usepackage{tocbibind}%把目录、参考文献加入目录%和当前文档中的几条命令重复
 \usepackage[titles]{tocloft}
 \setcounter{secnumdepth}{2}
@@ -105,23 +124,6 @@
 \titleformat{\section}{\vspace*{-0.2mm}\fontsize{15}{15}\bfseries\heiti}{\thesection}{1em}{\vspace{1.1mm}}
 \titleformat{\subsection}{\vspace*{0.6mm}\fontsize{14}{14}\bfseries\heiti}{\thesubsection}{1em}{\vspace{2.6mm}}
 \renewcommand\bibname{\vspace*{9mm} 参考文献\vspace{-9mm}}
-
-%font
-\setCJKmainfont{SimSun}
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}
-\setCJKfamilyfont{song}{SimSun}
-\setCJKfamilyfont{hei}{SimHei}
-\setCJKfamilyfont{kai}{KaiTi}
-\setCJKfamilyfont{fs}{FangSong}
-\newcommand{\song}{\CJKfamily{song}}    % 宋体
-\def\songti{\song}
-\newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
-\def\fangsong{\fs}
-\newcommand{\kai}{\CJKfamily{kai}}      % 楷体
-\def\kaishu{\kai}
-\newcommand{\hei}{\CJKfamily{hei}}      % 黑体
-\def\heiti{\hei}
 
 %封面页横线
 \makeatletter
