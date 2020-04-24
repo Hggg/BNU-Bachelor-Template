@@ -45,7 +45,17 @@
 			>	\setlength\parindent{2em}%中英文首行缩进2em，
 		
 		2.	视需要将目录、前言、结语、参考文献、附录、致谢等标题名称改为英文
-
+		
+	4.	关于单双页：
+		1.	一般来说，书籍的每一个部分（摘要、目录、章等等）应该在右侧（奇数页），Build20200424的更新支持了这一特性
+		
+		2.	一般来说，书籍的左右页的页边距应该不同（方便装订之后阅读）；规范[1]未对左右页的页边距进行区分
+		
+		3.	综合以上两条，文档使用了oneside, openany选项，保证左右页的页边距是一样的；Build20200424参考[8]定义了`\cleardoublepage`命令，并在main中的每一个部分后调用该命令，使每一个部分都在奇数页开始
+		
+		4.	如果你对某些空白页（例如英文摘要前的）不满意，可以去掉相应位置的命令；
+		如果你希望论文的左右页的页边距是不同的，可以将preamble中文档类一行改为`\documentclass[12pt,a4paper,twoside]{book}`
+		
 6.	部分实现原理：由于图书馆模板中存在诸多小问题，如中英文摘要到页面上方的间距不同等，为了尽可能模拟图书馆模板，本模板大量使用`\vspace{}`, `\vspace*{}` 调整垂直间距，例如preamble中使用
 
 	>	\titleformat{\chapter}{\vspace*{-19.8mm}\centering\fontsize{16}{16}\bfseries\heiti}{\thechapter}{1em}{\vspace*{-9.5mm}}
@@ -138,4 +148,5 @@
 [7] TeXLive 官网 https://www.tug.org/texlive/
 MacTeX 官网 https://tug.org/mactex/
 
+[8] 关于单双页的问题 https://tex.stackexchange.com/questions/185821/openright-in-oneside-book
 Last Update: Apr 24, 2020
