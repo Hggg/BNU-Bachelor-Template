@@ -103,20 +103,26 @@
 \setcounter{tocdepth}{2}
 %If you want SimHei for number
 %\renewcommand{\cftchappagefont}{\heiti\setmainfont{SimHei}}
-\renewcommand{\cftchappagefont}{}
+%引导线
 \renewcommand{\cftdot}{…}
 \renewcommand{\cftdotsep}{0}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+%缩进
 \renewcommand{\cftsecindent}{\cftchapindent}
 \renewcommand{\cftsubsecindent}{\cftchapindent}
+%字体
 \renewcommand{\cftchapfont}{\fontsize{16}{24}\selectfont\heiti}
 \renewcommand{\cftsecfont}{\fontsize{15}{22.5}\selectfont\heiti}
 \renewcommand{\cftsubsecfont}{\fontsize{14}{21}\selectfont\heiti}
-%规范中未对目录不同项之间的间距做规定，以下数值取半倍行高
+\renewcommand{\cftchappagefont}{\fontsize{16}{24}\selectfont\heiti}
+\renewcommand{\cftsecpagefont}{\fontsize{15}{22.5}\selectfont\heiti}
+\renewcommand{\cftsubsecpagefont}{\fontsize{14}{21}\selectfont\heiti}
+%间距（规范中未对目录不同项之间的间距做规定，以下数值取半倍行高）
 \renewcommand{\cftbeforechapskip}{8pt}
 \renewcommand{\cftbeforesecskip}{7.5pt}
 \renewcommand{\cftbeforesubsecskip}{7pt}
+
 
 %title
 \usepackage{titlesec}
