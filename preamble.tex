@@ -137,3 +137,10 @@
 
 \newcommand*{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
 \usepackage[absolute,overlay]{textpos}
+
+%修改\cleardoublepage的定义
+%ref: https://tex.stackexchange.com/questions/185821/openright-in-oneside-book
+\makeatletter
+\def\cleardoublepage{\clearpage\ifodd\c@page\else
+	\hbox{}\newpage\if@twocolumn\hbox{}\newpage\fi\fi}
+\makeatother
