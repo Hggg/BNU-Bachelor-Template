@@ -1,12 +1,12 @@
-#北师大本科生毕业论文模板
+# 北师大本科生毕业论文模板
 
-#Beijing Normal University Bachelor Thesis Template
+# Beijing Normal University Bachelor Thesis Template
 
 项目地址: https://github.com/Hggg/BNU-Bachelor-Template
 
 当前版本: Ver3.3-Build20200424
 
-##说明及注意事项
+## 说明及注意事项
 1.	**注意**：
 	-	本模板基于北师大毕业论文规范[1]和图书馆word模板[2]制作，与图书馆模板大体上一致，编译得到的PDF***可以通过***查重系统
 	
@@ -91,7 +91,7 @@
 
 
 
-##	Build histroy
+## Build histroy
 ### Ver3.3-Build20200411
 1.	确认模板通过查重系统
 
