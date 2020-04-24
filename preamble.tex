@@ -103,11 +103,12 @@
 \setcounter{tocdepth}{2}
 %If you want SimHei for number
 %\renewcommand{\cftchappagefont}{\heiti\setmainfont{SimHei}}
-%引导线
+%引导点
 \renewcommand{\cftdot}{…}
-\renewcommand{\cftdotsep}{0}
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{-0.3}
+\renewcommand{\cftchapleader}{\songti\;\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\songti\;\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\songti\;\cftdotfill{\cftdotsep}}
 %缩进
 \renewcommand{\cftsecindent}{\cftchapindent}
 \renewcommand{\cftsubsecindent}{\cftchapindent}
@@ -118,7 +119,7 @@
 \renewcommand{\cftchappagefont}{\fontsize{16}{24}\selectfont\heiti}
 \renewcommand{\cftsecpagefont}{\fontsize{15}{22.5}\selectfont\heiti}
 \renewcommand{\cftsubsecpagefont}{\fontsize{14}{21}\selectfont\heiti}
-%间距（规范中未对目录不同项之间的间距做规定，以下数值取半倍行高）
+%行间距（规范中未对目录不同项之间的间距做规定，以下数值取半倍行高）
 \renewcommand{\cftbeforechapskip}{8pt}
 \renewcommand{\cftbeforesecskip}{7.5pt}
 \renewcommand{\cftbeforesubsecskip}{7pt}
